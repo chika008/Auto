@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+| {{ auto.title }}
+{% endblock title %}
+
+{% block content %}
+<div class="container" >
+   
+     <h2 class="title-section destination-section__title"> Подробная информация</h2>
+ <div class="cc" style=";">
+    {% comment %} <img class="destination__img" src="{{ auto.image }}" alt="..."> {% endcomment %}
+     
+    <img class="destination__img" style=" " src="{{auto.image.url}}" alt="...">
+    
+        <h3 class="destination__title">Марка авто: {{auto.title}}</h3>
+        <p class="destination__text">Год выпуска: {{auto.year}}</p>
+        <p class="destination__text">Кузов: {{auto.car_body}}</p>
+        <b class="destination__text">Цена: {{auto.price}} <i class="fa-solid fa-dollar-sign"></i></b>
+        <p class="destination__text">Цвет авто: {{auto.color}}</p>
+        <p class="destination__text">Описание: <br> {{auto.description}}</p>
+        <p class="destination__text">Дата добавление: {{auto.date}}</p>
+    </div>
+    <a class="nav-main__link" href="{% url 'main' %}?body=" style="width:100% "><i class="fa-solid fa-arrow-rotate-left"></i> Вернутся</a>
+
+</div>
+   
+   
+
+{% endblock content %}

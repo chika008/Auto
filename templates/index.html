@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<section id="destination-section">
+    
+    <div class="container">
+        <div class="div">
+              <h2 class="title-section destination-section__title">Сайт по продаже автомашин</h2>
+              <a href="{% url 'blog_post' %}" class="btn btn-success">+ Create news</a>
+               {% comment %} <button link="" type="submit"></button> {% endcomment %}
+        </div>
+        
+      
+
+        <div class="destination-wrap">
+            {% for item in auto %}
+
+            <div class="destination">
+               
+                
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="Image">
+                {% else %}
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQDxAQDxAQEBAREBAQEhAQEBAXEg8RFRMZGBcTFhcZHCggGBsmHR8TIT0hMSktLi4uHCA1ODMsNyguLisBCgoKDg0NGg8PFy0dHx0tLS0tLS0tLS0tLS0tLTctKy0tNy0rKy0tLS0tLy0tLS4tNystLS03LS0tLS0rKy0rK//AABEIALwBDAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUBAgMGB//EADgQAAICAQMCBAQEBAQHAAAAAAECAAMRBBIhBTEGEyJBMlFhcRQVgaFCkbHRI1KT8DNTVGJzgpL/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABURAQEAAAAAAAAAAAAAAAAAAABB/9oADAMBAAIRAxEAPwD7jERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAGRzrqve2vP8A5F/vJE+d9M0fT69BdrNXpKryNZqFZvKqaw7tYa15YjgEj37QPd/j6f8Am1f6if3khGBAIIIIyCOxHznz/q/S+l6fqdC306SnTto7yRYta1tYLU2nnjdjd+8t/C/U621N+l09yajTV1Jcjh1byy7sPIUrwEQBQBjIHuYHqoiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgJ5rwRWraNwwDD8XreGAIONS57T0s8J4f6lpRoraLNfTpLfxeqJPnULYo/FM3wv7EcduxgezsqpsI3LW59twUnH6yh6fUqdY1QRVUfgdKcKABnzbecCV66bodeG0up0GltUjbdTfpt6jPqUbiRgjK9uxMmdH1tV/VtU9FtdyfgtMu+p1dci2zIypIz24geqiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAMgN0XSkknTackkkk015JPueJPiBX/AJJpP+l03+hV/ad9L0+mok1U1VkjBNdaKSPkcDmSYgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiYzAzEZmMwMxMZmYCIiAiIgIiYzAzExmZgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIGDPBda61rLnc0WrpqqeqafQACstZYxKb3c7gAnqHpxyB3E98Z53r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oxSoVWOwDAU7cL6mPGAPnj9BJMQEREBERAREQEREBERAGUN/VLQG24yLrU+FCAqb8E4fOOBnjPfAMvprsH+xArena13ssVsbQX2cAbgthXKkE7h2z2wSPmJHXqlg2F8AM7csFA2i6tMghjxhj3/lLe3Tqwww4HyJH9DN9ggQun6trGtyQQrsoxs7AkA8MT8u4H0kDT9XsYIrlEZlRmcj0qrn0vjPY/D3+KXFmmVsZHY54JH9J0Kj/YgV2i1Vj2AF1KbXPpX49r7QwOex7zm2us3MCVrQ3GsWMF2gAE4HqyScY5A/WWdlIYbT247Ejt9plagBt9sYx3/rApz1Ztp5r3Z9I/zpsY7wM9jgn7fzg9UfKoz11MNgdmHpDFLWyMsOCFU/zlzsEFAe4B+4gc9JaXrRiMFlViPkSO07TAEzAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERA//Z" alt="Описание изображения">
+
+                   
+              {% endif %}
+         
+            
+                <div class="destination-info">
+                    <h3 class="destination__title">Марка авто:{{item.title}}</h3>
+                    <p class="destination__text"><i class="fa-solid fa-calendar-days"></i> Год выпуска:{{item.year}}</p>
+                    <p class="destination__text"><i class="fa-solid fa-car"></i> Кузов:{{item.car_body}}</p>
+                    <p class="destination__text">Цена:{{item.price}} <i class="fa-solid fa-dollar-sign"></i></p>
+                    <pclass="destination__text"><i class="fa-solid fa-clock"></i> Дата добавление:{{item.date}}</p>
+                    <div class="knopka">
+                        <a href="{% url 'details_auto' id=item.id %}" class="destination__link">Подробнее</a>
+                    <a href="{% url 'edit_post' id=item.id %}" class="destination__link"><i class="fa-solid fa-pen"></i></a>
+
+                    <a href="{% url 'delete_post' id=item.id %}" class="destination__link"><i class="fa-solid fa-trash"></i></a>
+     
+                    </div>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <nav>
+        {% if auto.has_previous or auto.has_next %}
+        <ul class="pagination">
+            {% if auto.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ auto.previous_page_number }}">
+                        <==
+                    </a>
+                </li>
+            {% endif %}
+
+            {% for i in auto.paginator.page_range %}
+                {% if auto.number == i %}
+                    <li class="page-item active">
+                        <span class="page-link">{{ i }}</span>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if auto.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ auto.next_page_number }}">
+                        ==>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>{% endif %}
+    </nav>
+
+{% endblock content %}

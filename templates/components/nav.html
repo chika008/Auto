@@ -1,0 +1,27 @@
+<nav id="header-section">
+    <div class="container">
+        <div class="header">
+            
+        <div class="header-logo">
+                <img class="header-logo__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkiDfeTlsagVKoRWx4fka4Ki1RPcuZKzAVeA&s"  alt="HKinvision logo">
+                {% comment %} <a class="" href="{% url 'main' %} ">HKinvision</a> {% endcomment %}
+
+            
+            {% include 'components/nav_categories.html' %}
+           
+            <form action="{% url 'main' %}"  role="search" > 
+                <input value="{{ request.GET.search }}" name="search" type="search" placeholder="Search" aria-label="Search">
+                <input type="submit" name="submit" class="submit" value="Search" type="submit">
+            </form>
+               <button class="burger-menu" id="burger-menu">
+                <span class="burger-menu__line"></span>
+                <span class="burger-menu__line"></span>
+                <span class="burger-menu__line"></span>
+            </button>
+        </div>
+            
+            
+           
+        </div>
+    </div>
+</nav>

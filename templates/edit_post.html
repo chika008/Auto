@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Изменить информацию</h1>
+    <form method="POST" action="{% url 'edit_post' auto.id %}"  enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        {{ form.as_p }}
+        <br>
+        <button type="submit" >Сохранить информацию </button>
+    </form>
+
+
+{% endblock content %}

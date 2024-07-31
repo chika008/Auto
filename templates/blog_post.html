@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Добавить новый авто</h1>
+    <form method="post" action="{% url 'blog_post' %}"  enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        {{ form.as_p }}
+        <br>
+        <button type="submit" >+ Добавить авто</button>
+    </form>
+
+
+{% endblock content %}

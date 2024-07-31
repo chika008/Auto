@@ -1,0 +1,17 @@
+{% load custom_tags %}
+
+{% get_categories as Body %}
+
+
+<nav class="nav-main">
+    <ul class="nav-main__list">
+        <li class="nav-main__item">
+            <a class="nav-main__link" href="{% url 'main' %}?body=" style="color:#EE8313;">All</a>
+            {% for body in Body %}
+            <a class="nav-main__link" href="{% url 'main' %}?body={{ body.id }}">{{ body.name }}</a>
+            {% endfor %}
+        </li>
+        
+    </ul>
+</nav>
+
