@@ -28,6 +28,12 @@ urlpatterns = [
     path('add/', blog_post, name='blog_post'),
     path('delete/<int:id>/', views.delete_post, name='delete_post'),
     path('edit/<int:id>/', views.edit_post, name='edit_post'),  
+    path('create-news/', views.create_news, name='create_news'),
+    path('delete/<int:id>/', views.delete_news, name='delete_news'),
+    path('update/<int:id>/', views.update_news, name='update_news'),
+    path('login/', views.login_profile, name='login'),
+    path('logout/', views.logout_profile, name='logout'),
+    path('register/', views.register, name='register'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
